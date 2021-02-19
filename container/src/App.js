@@ -1,9 +1,14 @@
 import React from 'react'
 import MarketingApp from './components/MarketingApp'
-console.log('testing yaml action 4')
+import Header from './components/Header'
+import { BrowserRouter } from 'react-router-dom'
 export default () => {
-    return <div>
-        <h1>Container Here!</h1>
-        <MarketingApp />
-    </div>
+    return (
+        <BrowserRouter>
+            <div>
+                <Header />
+                <MarketingApp />
+            </div>
+        </BrowserRouter>
+    )
 }
