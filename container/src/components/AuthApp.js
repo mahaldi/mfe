@@ -13,6 +13,9 @@ export default () => {
                 if(pathname !== nextPathname) {
                     history.push(nextPathname)
                 }
+            },
+            onSignin: () => {
+                
             }
         })
 
