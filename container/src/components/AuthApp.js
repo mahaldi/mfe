@@ -7,7 +7,7 @@ export default ({onSignIn}) => {
     useEffect(() => {
         const { onParentNavigation }= mount(ref.current, {
             initialPath: history.location.pathname,
-            onNavigation: ({pathname: nextPathname}) => {
+            onParentNavigation: ({pathname: nextPathname}) => {
                 const {pathname} = history.location
 
                 if(pathname !== nextPathname) {
@@ -18,7 +18,7 @@ export default ({onSignIn}) => {
                 onSignIn()
             }
         })
-
+        if(onParentNavigation)
         history.listen(onParentNavigation)
     }, [])
 
