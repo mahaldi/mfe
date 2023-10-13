@@ -29,8 +29,6 @@ const prodConfig = {
             short_name: 'MyPWA',
             description: 'My awesome Progressive Web App!',
             background_color: '#ffffff',
-            inject: true,
-            ios: true,
             // crossorigin: 'use-credentials', //can be null, use-credentials or anonymous
             icons: [
               {
