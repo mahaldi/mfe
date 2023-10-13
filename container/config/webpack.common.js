@@ -26,8 +26,8 @@ module.exports = {
             favicon: './public/favicon.ico',
             manifest: './public/manifest.json' // not working
         }),
-        new WebpackPwaManifest({
-            publicPath: '/',
+        new WebpackPwaManifest({ // move this WebpackPwaManifest to webpack prod only
+            publicPath: '/container/latest/',
             name: 'My Progressive Web App',
             short_name: 'MyPWA',
             description: 'My awesome Progressive Web App!',
