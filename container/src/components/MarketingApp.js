@@ -47,6 +47,7 @@ export default () => {
 
     return(
         <div>
+            test 1
             <div ref={ref}/>
             <SwipeableDrawer
                 anchor='bottom'
