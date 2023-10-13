@@ -1,7 +1,4 @@
 const HTMLWebpackPlugin = require('html-webpack-plugin')
-const WebpackPwaManifest = require('webpack-pwa-manifest')
-const path = require('path')
-const assetPath = './static'
 
 module.exports = {
     module: {
@@ -23,22 +20,7 @@ module.exports = {
         new HTMLWebpackPlugin({
             template: './public/index.html',
             filename: './index.html',
-            favicon: './public/favicon.ico',
-            manifest: './public/manifest.json' // not working
-        }),
-        new WebpackPwaManifest({ // move this WebpackPwaManifest to webpack prod only
-            publicPath: '/container/latest/',
-            name: 'My Progressive Web App',
-            short_name: 'MyPWA',
-            description: 'My awesome Progressive Web App!',
-            background_color: '#ffffff',
-            // crossorigin: 'use-credentials', //can be null, use-credentials or anonymous
-            icons: [
-              {
-                src: path.resolve(`${assetPath}/logo512.png`),
-                size: '512x512' // you can also use the specifications pattern
-              }
-            ]
+            favicon: './public/favicon.ico'
         })
     ]
 }

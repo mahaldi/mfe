@@ -2,6 +2,9 @@ const {merge} = require('webpack-merge')
 const commonConfig = require('./webpack.common')
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin')
 const packageJson = require('../package.json')
+const WebpackPwaManifest = require('webpack-pwa-manifest')
+const path = require('path')
+const assetPath = './static'
 
 const devConfig = {
     mode: 'development',
@@ -24,6 +27,20 @@ const devConfig = {
             },
             shared: packageJson.dependencies
         }),
+        new WebpackPwaManifest({
+            publicPath: '/',
+            name: 'My Progressive Web App',
+            short_name: 'MyPWA',
+            description: 'My awesome Progressive Web App!',
+            background_color: '#ffffff',
+            // crossorigin: 'use-credentials', //can be null, use-credentials or anonymous
+            icons: [
+              {
+                src: path.resolve(`${assetPath}/logo512.png`),
+                size: '512x512' // you can also use the specifications pattern
+              }
+            ]
+        })
     ]
 }
 
