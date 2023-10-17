@@ -8,6 +8,7 @@ const mount = (el, { onParentNavigation, defaultHistory, initialPath }) => {
         initialEntries: [initialPath]
     })
     if(onParentNavigation) history.listen(onParentNavigation)
+    console.log('before render on mount marketing', App)
     ReactDom.render(
         <App history={history}/>,
         el
