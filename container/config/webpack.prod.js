@@ -49,7 +49,13 @@ const prodConfig = {
             ],
             skipWaiting: true,
             clientsClaim: true,
-            cleanupOutdatedCaches: true
+            cleanupOutdatedCaches: true,
+            runtimeCaching: [
+                {
+                  urlPattern: /\.js$/,
+                  handler: 'NetworkFirst',
+                },
+              ],
         })
     ]
 }
