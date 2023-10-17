@@ -23,6 +23,9 @@ export default () => {
       }, []);
 
     useEffect(() => {
+        console.log('ref.current', ref.current)
+        console.log('ref', ref)
+        console.log('mount', mount)
         const { onParentNavigation }= mount(ref.current, {
             initialPath: history.location.pathname,
             onParentNavigation: ({pathname: nextPathname}) => {
@@ -33,8 +36,10 @@ export default () => {
                 }
             }
         })
-        if(onParentNavigation)
-        history.listen(onParentNavigation)
+        if(onParentNavigation) {
+            console.log('onParentNavigation', onParentNavigation)
+            history.listen(onParentNavigation)
+        }
     }, [])
 
     const onClick = evt => {
