@@ -53,7 +53,7 @@ export default () => {
     console.log('ref before return', ref)
     return(
         <div>
-            test 5
+            test 6
             <div ref={ref}/>
             <SwipeableDrawer
                 anchor='bottom'

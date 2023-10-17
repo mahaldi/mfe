@@ -12,6 +12,7 @@ const DashboardLazy = lazy(() => import('./components/DashboardApp'))
 const history = createBrowserHistory()
 
 export default () => {
+    console.log('app init')
     const [isSignIn, setIsSignIn] = useState(false)
     useEffect(() => {
         if(isSignIn) history.push('/dashboard')
