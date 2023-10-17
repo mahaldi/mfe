@@ -26,6 +26,7 @@ const prodConfig = {
         }),
         new WebpackPwaManifest({
             publicPath: '/container/latest/',
+            start_url: '/?utm_source=homescreen',
             name: 'My Progressive Web App',
             short_name: 'MyPWA',
             description: 'My awesome Progressive Web App!',
