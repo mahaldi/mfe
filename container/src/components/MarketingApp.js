@@ -5,6 +5,7 @@ import Button from '@material-ui/core/Button';
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer'
 
 export default () => {
+    console.log('masuk')
     const ref = useRef(null)
     const history = useHistory()
     const [supportsPWA, setSupportsPWA] = useState(false);
@@ -49,7 +50,7 @@ export default () => {
         }
         promptInstall.prompt();
       };
-
+    console.log('ref before return', ref)
     return(
         <div>
             test 5
