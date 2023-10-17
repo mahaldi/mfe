@@ -20,6 +20,7 @@ const isLocalhost = Boolean(
 const PUBLIC_URL = 'https://d2xy4pe2qiku87.cloudfront.net/container/latest';
   
   export function register(config) {
+    console.log('on trigger register')
     if (process.env.NODE_ENV === 'production' && 'serviceWorker' in navigator) {
       // The URL constructor is available in all browsers that support SW.
       const publicUrl = new URL(PUBLIC_URL, window.location.href);
