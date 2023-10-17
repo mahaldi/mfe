@@ -39,7 +39,7 @@ const prodConfig = {
             ]
         }),
         new WorkboxPlugin.GenerateSW({
-            swDest: 'sw.js',
+            swDest: 'service-worker.js',
             exclude: [
                 /\.map$/, // source maps
                 /^manifest.*\.js(?:on)?$/, // web app manifest
