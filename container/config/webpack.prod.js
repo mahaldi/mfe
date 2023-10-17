@@ -5,6 +5,7 @@ const packageJson = require('../package.json')
 const domain = process.env.PRODUCTION_DOMAIN // course 51, futher info on course 68
 const WebpackPwaManifest = require('webpack-pwa-manifest')
 const path = require('path')
+const WorkboxPlugin = require('workbox-webpack-plugin');
 const assetPath = './static'
 
 const prodConfig = {
@@ -36,6 +37,19 @@ const prodConfig = {
                 size: '512x512' // you can also use the specifications pattern
               }
             ]
+        }),
+        new WorkboxPlugin.GenerateSW({
+            swDest: 'sw.js',
+            exclude: [
+                /\.map$/, // source maps
+                /^manifest.*\.js(?:on)?$/, // web app manifest
+                /icons-[a-z0-9]+\/[a-z0-9_-]+\.png$/, // icons
+                /icons-[a-z0-9]+\/\.cache$/, // favicons cache file
+                /node_modules\/standardized-audio-context\// // remove standardized-audio-context later
+            ],
+            skipWaiting: true,
+            clientsClaim: true,
+            cleanupOutdatedCaches: true
         })
     ]
 }
