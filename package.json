@@ -1,0 +1,16 @@
+{
+  "name": "mfe",
+  "version": "1.0.0",
+  "description": "live testing: https://d2xy4pe2qiku87.cloudfront.net/",
+  "main": "index.js",
+  "node": "12.16.2",
+  "scripts": {
+    "container": "npm run start --prefix container",
+    "auth": "npm run start --prefix auth",
+    "dashboard": "npm run start --prefix dashboard",
+    "marketing": "npm run start --prefix marketing",
+    "start": "npm run container & npm run auth & npm run dashboard & npm run marketing"
+  },
+  "author": "mahaldi",
+  "license": "ISC"
+}

@@ -9,6 +9,8 @@ const generateClassName = createGenerateClassName({
     productionPrefix: 'ma'
 })
 export default ({history}) => {
+    console.log('on app marketing', Landing)
+    console.log('history marketing', history)
     return <div>
         <StylesProvider generateClassName={generateClassName}>
             <Router history={history}>

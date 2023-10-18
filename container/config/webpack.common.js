@@ -18,7 +18,10 @@ module.exports = {
     },
     plugins: [
         new HTMLWebpackPlugin({
-            template: './public/index.html'
+            template: './public/index.html',
+            filename: './index.html',
+            favicon: './public/favicon.ico',
+            manifest: './public/manifest.json'
         })
     ]
 }
