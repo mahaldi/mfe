@@ -5,6 +5,15 @@ import { Router, Switch, Route, Redirect } from 'react-router-dom'
 import { createBrowserHistory } from 'history'
 const MarketingLazy = lazy(() => import('./components/MarketingApp'))
 const AuthLazy = lazy(() => import('./components/AuthApp'))
+
+/* 
+    createGenerateClassName :
+    untuk prevent syling collision, jadi saat service 1 dan service 2 memiliki class css yg sama, dan ketika berpindah dari service 1 ke service 2,
+    maka masih ada styling dari service 1 yg ada ke apply juga ke service 2
+    kelebihan menggunakan jss / styled-component
+    https://cssinjs.org/performance/?v=v9.8.7
+    https://cssinjs.org/?v=v10.10.0
+*/
 const generateClassName = createGenerateClassName({
     productionPrefix: 'co'
 })
